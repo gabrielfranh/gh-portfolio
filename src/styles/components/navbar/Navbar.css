@@ -1,3 +1,19 @@
+.bg-dark {
+    background-color: transparent !important; 
+}
+
+.bg-transparent {
+    background-color: transparent !important;  
+}
+
+.navbar.navbar-dark.bg-transparent .nav-item.nav-link {
+    color: white !important;
+}
+
+.navbar.navbar-dark.bg-transparent .nav-item.nav-link.disabled {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
 .nav-item.nav-link.active::after {
     content: "";
     position: absolute;

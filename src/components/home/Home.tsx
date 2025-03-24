@@ -35,7 +35,7 @@ const Home = () => {
             <div>
                 {showSubtitle && ( 
                 <>
-                    <a href='https://www.linkedin.com/in/gabrielfranh/' target="_blank"><i className="fa-brands fa-linkedin fa-2xl homeIcons"></i></a>
+                    <a href='https://www.linkedin.com/in/gabrielfranh/?locale=en_US' target="_blank"><i className="fa-brands fa-linkedin fa-2xl homeIcons"></i></a>
                     <a href='https://github.com/gabrielfranh' target="_blank"><i className="fa-brands fa-github fa-2xl homeIcons"></i></a>
                 </>
             )}
