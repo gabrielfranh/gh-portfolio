@@ -9,7 +9,7 @@ const Certifications = () => {
                     <div className="certifications-grid">
                         <div className="certification-card">
                             <img 
-                                src="/src/assets/practitioner_badge.png" 
+                                src="/src/assets/images/practitioner_badge.png" 
                                 alt="AWS Certification Badge" 
                                 className="certification-badge" 
                             />

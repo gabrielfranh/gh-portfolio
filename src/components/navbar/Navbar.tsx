@@ -7,16 +7,11 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            console.log(window.scrollY); // Verifique o valor da rolagem no console para depuração
-            if (window.scrollY > 900) {  // Ajuste esse valor conforme necessário
-                setNavbarTransparent(false);
-            } else {
-                setNavbarTransparent(true);
-            }
+            setNavbarTransparent(window.scrollY < 200); // Muda para escuro após 200px
         };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
@@ -27,6 +22,7 @@ const Navbar = () => {
                     <Link className="nav-item nav-link" activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={500}>About me</Link>
                     <Link className="nav-item nav-link" activeClass="active" to="skills" spy={true} smooth={true} offset={-70} duration={500}>Skills</Link>
                     <Link className="nav-item nav-link" activeClass="active" to="certifications" spy={true} smooth={true} offset={-70} duration={500}>Certifications</Link>
+                    <Link className="nav-item nav-link" activeClass="active" to="projects" spy={true} smooth={true} offset={-70} duration={500}>Projects</Link>
                     <Link className="nav-item nav-link disabled" to="blog" smooth={true} offset={-70} duration={500}>Blog</Link>
                     <Link className="nav-item nav-link" activeClass="active" to="contact" spy={true} smooth={true} offset={-70} duration={500}>Contact</Link>
                 </div>
