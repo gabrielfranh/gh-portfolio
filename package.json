@@ -15,6 +15,7 @@
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
     "react-scroll": "^1.9.3",
+    "remix": "^2.16.3",
     "swiper": "^11.2.6"
   },
   "devDependencies": {
