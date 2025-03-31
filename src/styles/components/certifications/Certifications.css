@@ -1,37 +1,28 @@
 .certifications-section {
     background-color: #1e1e1e;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-}
-
-.certifications-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px;
+    padding: 40px 20px;
 }
-
 
 .certifications-title {
     font-size: 24px;
     color: #fff;
     margin-bottom: 20px;
-    margin-top: 30px;
 }
 
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin-bottom: 40px;
+.certifications-swiper {
+    width: 90%;
+    max-width: 800px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: white !important;
+}
+
+.swiper-pagination-bullet {
+    background: white !important;
 }
 
 .certification-card {
@@ -39,28 +30,39 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 12px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
     border: 2px solid #fff;
+    width: 180px;
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.certification-card:hover {
+    transform: scale(1.05);
+    border-color: #00A8E8;
 }
 
 .certification-badge {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
     object-fit: contain;
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 .certification-name {
     color: #fff;
-    font-size: 16px;
-    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    transition: color 0.2s ease-in-out;
+}
+
+.certification-card:hover .certification-name {
+    color: #00A8E8;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
