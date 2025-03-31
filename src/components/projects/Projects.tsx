@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import 'swiper/swiper-bundle.css';
 import '../../styles/components/projects/Projects.css'
 
 type Repo = {
