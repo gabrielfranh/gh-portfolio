@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useTranslation } from 'react-i18next';
 import 'swiper/swiper-bundle.css';
 import '../../styles/components/projects/Projects.css'
 
@@ -13,6 +14,7 @@ type Repo = {
 };
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [repos, setRepos] = useState<Repo[]>([]);
   const [filteredRepos, setFilteredRepos] = useState<Repo[]>([]);
   const [languages, setLanguages] = useState<string[]>([]);
@@ -34,7 +36,7 @@ const Projects = () => {
         setLanguages(uniqueLanguages);
       })
       .catch(() => {
-        setError("Error loading the repositories.");
+        setError(t("projects.error"));
         setLoading(false);
       });
   }, []);
@@ -44,17 +46,17 @@ const Projects = () => {
     setFilteredRepos(language === "All" ? repos : repos.filter((repo) => repo.language === language));
   };
 
-  if (loading) return <p className="loading">Loading...</p>;
+  if (loading) return <p className="loading">{t("projects.loading")}</p>;
   if (error) return <p className="error">{error}</p>;
 
   return (
     <section className="projects-section" id="projects">
-      <h2>Personal/Study Projects</h2>
+      <h2>{t("projects.title")}</h2>
 
       <div className="filter-container">
-        <label>Filter by tech:</label>
+        <label>{t("projects.filter")}</label>
         <select value={selectedLanguage} onChange={(e) => filterProjects(e.target.value)}>
-          <option value="All">All</option>
+          <option value="All">{t("projects.all")}</option>
           {languages.map((lang) => (
             <option key={lang} value={lang}>
               {lang}
@@ -71,7 +73,7 @@ const Projects = () => {
               <p>{repo.description || "Without description"}</p>
               <p className="language">{repo.language || "Not specified"}</p>
               <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                See on GitHub →
+                {t("projects.github")} →
               </a>
             </div>
           </SwiperSlide>

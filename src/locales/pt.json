@@ -1,0 +1,65 @@
+{
+    "navbar": {
+        "home": "Início",
+        "about": "Sobre mim",
+        "skills": "Habilidades",
+        "certifications": "Certificações",
+        "projects": "Projetos",
+        "blog": "Blog",
+        "contact": "Contato",
+        "language": "Idioma"
+      },
+      "home": {
+          "title": "Eu sou o Gabriel Habermann, bem-vindo ao meu portfólio!",
+          "subTitle": "Engenheiro de Software com 6 anos de experiência, especializado em desenvolvimento baseado em nuvem."
+          
+      },
+      "about": {
+          "description": "Graduado em Ciência da Computação pela UNESP e certificado como AWS Cloud Practitioner, iniciei minha carreira como desenvolvedor em 2017, ainda no ensino médio e técnico. Desde então, tenho atuado como engenheiro de software backend, desenvolvendo soluções no ecossistema .NET (Core e Framework) com C#. Trabalho com diversas tecnologias, incluindo Kubernetes, Docker e MySQL, aplicando boas práticas como SOLID e KISS para garantir um código limpo e eficiente. Embora meu foco principal seja o desenvolvimento backend, também tenho experiência em desenvolvimento full-stack, utilizando React no front-end para criar interfaces dinâmicas e responsivas. Além disso, possuo forte conhecimento em testes unitários com ferramentas como xUnit e NUnit, além de expertise na utilização do ambiente AWS para entrega de software."
+          
+      },
+      "skills": {
+          "title": "Sou bom em:",
+          "backendDev": "Desenvolvimento Backend",
+          "framework": "O framework por trás desse portfolio!",
+          "containerization": "Containerização",
+          "orchestration": "Orquestração",
+          "cloudProvider": "Provedor de nuvem",
+          "cleanCode": "Código Limpo",
+          "principles": "Princípios",
+          "unitTest": "Testes de unidade",
+          "messageBrokers": "Mensageria",
+          "microservice": "Arquitetura de Microsserviço",
+          "designPatterns": "Padrões de Projeto",
+          "puzzles": "Desafios?!",
+          "sixYears": "6 anos de experiência",
+          "fiveYears": "5 anos de experiência",
+          "fourYears": "4 anos de experiência",
+          "threeYears": "3 anos de experiência"
+      },
+      "certifications": {
+          "title": "Certificações",
+          "kubernetes": "Kubernetes Completo",
+          "dotnetMicroservices": "Microsserviços em .NET Core"
+      },
+      "projects": {
+          "title": "Projetos Pessoais/Estudos",
+          "filter" : "Filtrar por tecnologia:",
+          "all": "Todas",
+          "github": "Veja no GitHub",
+          "loading": "Carregando...",
+          "error": "Erro ao carregar os repositórios."
+      },
+      "contact": {
+          "title": "Me Contate",
+          "subTitle": "Sinta-se à vontade para entrar em contato comigo através do formulário abaixo ou pelas redes sociais.",
+          "name": "Nome",
+          "namePlaceholder": "Digite seu nome",
+          "email": "Email",
+          "emailPlaceholder": "Digite seu email",
+          "message": "Message",
+          "messagePlaceholder": "Digite sua mensagem aqui",
+          "submit": "Enviar Mensagem",
+          "downloadCv": "Você também pode baixar meu currículo no seu idioma preferido."
+      }
+  }

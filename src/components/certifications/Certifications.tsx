@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-
+import { useTranslation } from 'react-i18next';
 import 'swiper/swiper-bundle.css';
 import '../../styles/components/certifications/Certifications.css';
 import cloudEssentials from '../../assets/images/AWS_Cloud_Essentials.png'
@@ -24,12 +24,12 @@ const certifications = [
         link: "https://www.linkedin.com/in/gabrielfranh/details/certifications/1721784843843/single-media-viewer/?profileId=ACoAAByWR2IB709UTjuzTVobU2HotF3sjJW8EBQ"
     },
     {
-        name: "Kubernetes Complete",
+        name: "certifications.kubernetes",
         image: kubernetesComplete,
         link: "https://www.udemy.com/certificate/UC-e0ee9d62-4c9c-4a8d-b762-a6f06a6fc517/"
     },
     {
-        name: ".NET Core Microservices",
+        name: "certifications.dotnetMicroservices",
         image: dotnetMicroservices,
         link: "https://www.udemy.com/certificate/UC-822cc172-5d1d-4a90-9758-ee53469f3a1c/"
     },
@@ -51,9 +51,11 @@ const certifications = [
 ];
 
 const Certifications = () => {
+    const { t } = useTranslation();
+
     return (
         <section id='certifications' className="certifications-section">
-            <h1 className="certifications-title">Certifications</h1>
+            <h1 className="certifications-title">{t("certifications.title")}</h1>
             <Swiper
                 modules={[Navigation, Pagination]}
                 spaceBetween={20}
@@ -76,7 +78,7 @@ const Certifications = () => {
                                     alt={cert.name} 
                                     className="certification-badge"
                                 />
-                                <p className="certification-name">{cert.name}</p>
+                                <p className="certification-name">{t(cert.name)}</p>
                             </div>
                         </a>
                     </SwiperSlide>

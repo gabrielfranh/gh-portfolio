@@ -1,0 +1,65 @@
+{
+    "navbar": {
+      "home": "Home",
+      "about": "About Me",
+      "skills": "Skills",
+      "certifications": "Certifications",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact",
+      "language": "Language"
+    },
+    "home": {
+        "title": "I'm Gabriel Habermann, welcome to my portfolio!",
+        "subTitle": "Software Engineer with 6 years of experience, specializing in cloud-based development"
+        
+    },
+    "about": {
+        "description": "Graduated in Computer Science from UNESP and certified as an AWS Cloud Practitioner, I started my career as a developer in 2017 while still in high school and technical education. Since then, I have been working as a backend software engineer, developing solutions in the .NET ecosystem (Core and Framework) with C#. I work with various technologies, including Kubernetes, Docker, and MySQL, applying best practices such as SOLID and KISS to ensure clean and efficient code. Although my primary focus is on backend development, I also have experience in full-stack development, using React on the front end to build dynamic and responsive interfaces. Additionally, I have strong knowledge of unit testing with tools like xUnit and NUnit, as well as expertise in leveraging the AWS environment for software delivery."
+        
+    },
+    "skills": {
+        "title": "I'm good at:",
+        "backendDev": "Backend Development",
+        "framework": "The framework behind this portfolio!",
+        "containerization": "Containerization",
+        "orchestration": "Orchestration",
+        "cloudProvider": "Cloud Provider",
+        "cleanCode": "Clean Code",
+        "principles": "Principles",
+        "unitTest": "Unit Testing",
+        "messageBrokers": "Message Brokers",
+        "microservice": "Microservice Architecture",
+        "designPatterns": "Design Patterns",
+        "puzzles": "Puzzles?!",
+        "sixYears": "6 Years Experience",
+        "fiveYears": "5 Years Experience",
+        "fourYears": "4 Years Experience",
+        "threeYears": "3 Years Experience"
+    },
+    "certifications": {
+        "title": "Certifications",
+        "kubernetes": "Kubernetes Complete",
+        "dotnetMicroservices": ".NET Core Microservices"
+    },
+    "projects": {
+        "title": "Personal/Study Projects",
+        "filter" : "Filter by tech:",
+        "all": "All",
+        "github": "See on GitHub",
+        "loading": "Loading...",
+        "error": "Error loading the repositories."
+    },
+    "contact": {
+        "title": "Contact Me",
+        "subTitle": "Feel free to reach out to me using the form below or in social media.",
+        "name": "Name",
+        "namePlaceholder": "Enter your name",
+        "email": "Email",
+        "emailPlaceholder": "Enter your email",
+        "message": "Message",
+        "messagePlaceholder": "Type your message here",
+        "submit": "Send Message",
+        "downloadCv": "You can also download my CV in your preferred language"
+    }
+}

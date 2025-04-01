@@ -1,15 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../navbar/Navbar'
 import Typewriter from './Typewriter';
+
 
 import  '../../styles/components/home/Home.css'
 
 const Home = () => {
+    const { t, i18n } = useTranslation();
     const [showSubtitle, setShowSubtitle] = useState(false);
 
     const handleTypewriterComplete = () =>{
         setShowSubtitle(true);
-    }
+    };
+
+    useEffect(() => {
+        setShowSubtitle(false);
+    }, [i18n.language]);
     
     return (
         <>
@@ -19,7 +26,7 @@ const Home = () => {
             <div className="overlay"></div>
             <h1 className="title">
                 <Typewriter 
-                    text="I'm Gabriel Habermann, welcome to my portfolio!" 
+                    text={t("home.title")}
                     delay={50} 
                     repeat={false} 
                     onComplete={handleTypewriterComplete}
@@ -28,7 +35,7 @@ const Home = () => {
             <div>
                 {showSubtitle && (
                     <h2 className="subTitle">
-                        Software Engineer with 6 years of experience, specializing in cloud-based development
+                        {t("home.subTitle")}
                     </h2>
                 )}
             </div>
