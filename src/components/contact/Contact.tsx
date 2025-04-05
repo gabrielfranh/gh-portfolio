@@ -1,8 +1,34 @@
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../styles/components/contact/Contact.css';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { t } = useTranslation();
+
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm('service_g0tbslt', 'template_l2e6cjg', form.current, {
+        publicKey: 'j22QuQ7tut3HcbBN9',
+      })
+      .then(
+        (result) => {
+          console.log('SUCCESS!');
+          console.log(result.text)
+        },
+        (error: any) => {
+          console.log('ERROR!');
+          console.log(error.text);
+        },
+      );
+  };
+
 
   return (
     <section className="contact-section bg-dark text-white py-5" id="contact">
@@ -39,7 +65,8 @@ const Contact = () => {
 
           <div className="col-md-7">
             <form
-              action="https://formsubmit.co/gabrielfranh@gmail.com"
+              ref={form}
+              onSubmit={sendEmail}
               method="POST"
               className="p-4 rounded shadow form-dark"
             >
@@ -54,7 +81,7 @@ const Contact = () => {
                   type="text"
                   className="form-control"
                   id="name"
-                  name="name"
+                  name="user_name"
                   required
                   placeholder={t("contact.namePlaceholder")}
                 />
@@ -68,7 +95,7 @@ const Contact = () => {
                   type="email"
                   className="form-control"
                   id="email"
-                  name="email"
+                  name="user_email"
                   required
                   placeholder={t("contact.emailPlaceholder")}
                 />
