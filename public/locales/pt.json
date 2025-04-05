@@ -51,13 +51,13 @@
           "error": "Erro ao carregar os repositórios."
       },
       "contact": {
-          "title": "Me Contate",
+          "title": "Vamos nos conectar?",
           "subTitle": "Sinta-se à vontade para entrar em contato comigo através do formulário abaixo ou pelas redes sociais.",
           "name": "Nome",
           "namePlaceholder": "Digite seu nome",
           "email": "Email",
           "emailPlaceholder": "Digite seu email",
-          "message": "Message",
+          "message": "Mensagem",
           "messagePlaceholder": "Digite sua mensagem aqui",
           "submit": "Enviar Mensagem",
           "downloadCv": "Você também pode baixar meu currículo no seu idioma preferido."
