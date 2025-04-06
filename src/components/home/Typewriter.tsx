@@ -14,11 +14,13 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, delay = 100, repeat = fal
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!text) return;
     setCurrentText('');
     setCurrentIndex(0);
   }, [text]);
 
   useEffect(() => {
+    if (!text) return;
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setCurrentText((prevText) => prevText + text[currentIndex]);

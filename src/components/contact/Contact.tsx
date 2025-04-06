@@ -1,10 +1,13 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../styles/components/contact/Contact.css';
 import emailjs from '@emailjs/browser';
+import Toast from 'react-bootstrap/Toast';
+import ToastContainer from 'react-bootstrap/ToastContainer';
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [showToast, setShowToast] = useState(false);
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -18,12 +21,10 @@ const Contact = () => {
         publicKey: 'j22QuQ7tut3HcbBN9',
       })
       .then(
-        (result) => {
-          console.log('SUCCESS!');
-          console.log(result.text)
+        () => {
+          setShowToast(true);
         },
         (error: any) => {
-          console.log('ERROR!');
           console.log(error.text);
         },
       );
@@ -123,6 +124,12 @@ const Contact = () => {
             </form>
           </div>
         </div>
+
+        <ToastContainer position="top-end" className="p-3 submitToast" style={{ zIndex: 9999 }} containerPosition='fixed'>
+        <Toast show={showToast} delay={4000} onClose={() => setShowToast(false)} autohide>
+          <Toast.Body>Mensagem enviada com sucesso!</Toast.Body>
+        </Toast>
+      </ToastContainer>
       </div>
     </section>
   );
