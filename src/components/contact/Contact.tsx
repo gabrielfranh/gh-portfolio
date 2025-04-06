@@ -55,10 +55,10 @@ const Contact = () => {
 
             <h5 className="mt-4">{t("contact.downloadCv")}</h5>
             <div className="d-flex gap-2 mt-2">
-              <a href="/src/assets/documents/EN_Gabriel_Habermann.pdf" download className="btn btn-outline-light btn-sm">
+              <a href="/documents/EN_Gabriel_Habermann.pdf" download className="btn btn-outline-light btn-sm">
                 <i className="fas fa-file-download me-2"></i>English
               </a>
-              <a href="/src/assets/documents/PT_Gabriel_Habermann.pdf" download className="btn btn-outline-light btn-sm">
+              <a href="/documents/PT_Gabriel_Habermann.pdf" download className="btn btn-outline-light btn-sm">
                 <i className="fas fa-file-download me-2"></i>Português
               </a>
             </div>
