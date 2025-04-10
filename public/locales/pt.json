@@ -32,10 +32,8 @@
           "microservice": "Arquitetura de Microsserviço",
           "designPatterns": "Padrões de Projeto",
           "puzzles": "Desafios?!",
-          "sixYears": "6 anos de experiência",
-          "fiveYears": "5 anos de experiência",
-          "fourYears": "4 anos de experiência",
-          "threeYears": "3 anos de experiência"
+          "years": " anos de experiência",
+          "database": "Banco de dados"
       },
       "certifications": {
           "title": "Certificações",
