@@ -78,7 +78,6 @@ const Skills = () => {
                     <div className="skill-card">
                         <i className="fa-solid fa-database skill-icon"></i>
                         <p className="skill-name">{t("skills.database")}</p>
-                        <p className="skill-subtitle">{t("skills.puzzles")}</p>
                         <div className="skill-overlay">MySQL, PostgreSQL, SQL Server - 6 {t("skills.years")}</div>
                     </div>
                 </div>
