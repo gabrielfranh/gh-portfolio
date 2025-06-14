@@ -95,7 +95,7 @@ const Certifications = () => {
     };
   }, []);
 
-  const handleCertificationClick = (cert: Certification, event: React.MouseEvent) => {
+  const handleCertificationClick = (cert: Certification) => {
     // Add click analytics or tracking here if needed
     console.log(`Certification clicked: ${cert.name}`);
   };
