@@ -1,69 +1,67 @@
-.projects-section {
-    background-color: #121212;
+  .projects-section { 
     color: #ffffff;
     padding: 40px 20px;
     text-align: center;
   }
-  
+
   h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #bb86fc;
+    color: #fff;
   }
-  
+
   .filter-container {
     margin-bottom: 20px;
   }
-  
+
   .filter-container label {
     margin-right: 10px;
   }
-  
+
   .filter-container select {
     padding: 8px;
-    background-color: #333;
-    color: #fff;
+    color: #000;
     border: 1px solid #bb86fc;
     border-radius: 5px;
   }
-  
+
   .project-card {
-    background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: left;
+    border: 2px solid #bb86fc;
   }
-  
+
   .project-card h3 {
     font-size: 1.5rem;
     color: #bb86fc;
   }
-  
+
   .project-card p {
     margin: 10px 0;
     color: #ccc;
   }
-  
+
   .project-card .language {
     font-weight: bold;
     color: #03dac6;
   }
-  
+
   .project-card a {
     display: inline-block;
     margin-top: 10px;
     color: #bb86fc;
     text-decoration: none;
   }
-  
+
   .project-card a:hover {
     text-decoration: underline;
   }
-  
+
   .loading,
   .error {
     text-align: center;
     font-size: 1.2rem;
     color: #ff6f61;
-  }  
+  }

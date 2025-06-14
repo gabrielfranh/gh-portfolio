@@ -1,83 +1,88 @@
 .contact-section {
-    background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-    padding: 4rem 0;
-    text-align: center;
-  }
-  
-  .contact-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .social-icons a {
-    color: #fff;
-    font-size: 1.75rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    transform: scale(1.2);
-    color: #0d6efd;
-  }
-  
-  .form-dark {
-    background-color: #1f1f1f;
-    color: #ffffff;
-    border: 1px solid #444;
-  }
-  
-  .form-dark input,
-  .form-dark textarea {
-    background-color: #2c2c2c;
-    color: #fff;
-    border: 1px solid #555;
-  }
-  
-  .form-dark input::placeholder,
-  .form-dark textarea::placeholder {
-    color: #aaa;
-  }
-  
-  .btn-outline-light i {
-    transition: transform 0.3s;
-  }
-  
-  .btn-outline-light:hover i {
-    transform: scale(1.2);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.75rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #0d6efd;
+}
+
+.form-dark {
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.form-dark input,
+.form-dark textarea {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.form-dark input:focus,
+.form-dark textarea:focus {
+  border-color: #bb86fc;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+  background-color: transparent;
+}
+
+.form-dark input::placeholder,
+.form-dark textarea::placeholder {
+  color: #aaa;
+}
+
+.btn-outline-light i {
+  transition: transform 0.3s;
+}
+
+.btn-outline-light:hover i {
+  transform: scale(1.2);
+}
+
+.submitToast {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1rem;
   }
 
-  .submitToast {
-    color: black;
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  
-  @media (max-width: 768px) {
-    .contact-section {
-      padding: 2rem 1rem;
-    }
-  
-    .social-icons {
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-  
-    .btn-outline-light {
-      font-size: 0.9rem;
-      padding: 0.5rem 0.75rem;
-    }
-  
-    .form-dark {
-      padding: 1rem;
-    }
-  
-    .contact-section h2 {
-      font-size: 2rem;
-    }
-  }  
+
+  .btn-outline-light {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .form-dark {
+    padding: 1rem;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+}

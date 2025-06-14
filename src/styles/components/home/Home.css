@@ -1,56 +1,85 @@
-.subTitle {
-    animation: fadeIn 1s ease-out;
-    font-size: 20px;
-    color: #fff;
-    margin-top: 20px;
-}
-
-.homeIcons {
-    animation: fadeIn 1s ease-out;
-    padding: 10px;
-    color: white;
-    margin-top: 20px;
+#home {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
 }
 
 .title {
-    color: #fff;
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-#home {
-    height: calc(100vh);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    overflow: hidden;
-    
+.subTitle {
+  animation: fadeIn 1s ease-out;
+  font-size: 1.5rem;
+  color: #bb86fc;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
+.homeIcons {
+  animation: fadeIn 1s ease-out;
+  padding: 15px;
+  color: white;
+  margin: 0 10px;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.homeIcons:hover {
+  color: #bb86fc;
+  transform: translateY(-5px) scale(1.1);
+  background-color: rgba(187, 134, 252, 0.1);
+  box-shadow: 0 10px 20px rgba(187, 134, 252, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
   
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../../assets/images/software.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -2;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+  .subTitle {
+    font-size: 1.2rem;
+  }
+  
+  .homeIcons {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+  }
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: -1;
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subTitle {
+    font-size: 1rem;
+  }
+  
+  .homeIcons {
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
 }

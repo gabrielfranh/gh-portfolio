@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import '../../styles/components/contact/Contact.css';
-import emailjs from '@emailjs/browser';
-import Toast from 'react-bootstrap/Toast';
-import ToastContainer from 'react-bootstrap/ToastContainer';
+import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import "../../styles/components/contact/Contact.css";
+import emailjs from "@emailjs/browser";
+import Toast from "react-bootstrap/Toast";
+import ToastContainer from "react-bootstrap/ToastContainer";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -17,8 +17,8 @@ const Contact = () => {
     if (!form.current) return;
 
     emailjs
-      .sendForm('service_g0tbslt', 'template_l2e6cjg', form.current, {
-        publicKey: 'j22QuQ7tut3HcbBN9',
+      .sendForm("service_g0tbslt", "template_l2e6cjg", form.current, {
+        publicKey: "j22QuQ7tut3HcbBN9",
       })
       .then(
         () => {
@@ -26,13 +26,12 @@ const Contact = () => {
         },
         (error: any) => {
           console.log(error.text);
-        },
+        }
       );
   };
 
-
   return (
-    <section className="contact-section bg-dark text-white py-5" id="contact">
+    <section className="contact-section text-white py-5" id="contact">
       <div className="container">
         <h2 className="text-center mb-4">{t("contact.title")}</h2>
         <p className="text-center mb-5">{t("contact.subTitle")}</p>
@@ -42,23 +41,47 @@ const Contact = () => {
             <h4>gabrielfranh@gmail.com</h4>
 
             <div className="d-flex gap-4 fs-4 my-3 social-icons">
-              <a href="mailto:gabrielfranh@gmail.com" className="text-white" aria-label="Email">
+              <a
+                href="mailto:gabrielfranh@gmail.com"
+                className="text-white"
+                aria-label="Email"
+              >
                 <i className="fas fa-envelope"></i>
               </a>
-              <a href="https://github.com/gabrielfranh" target="_blank" rel="noopener noreferrer" className="text-white" aria-label="GitHub">
+              <a
+                href="https://github.com/gabrielfranh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+                aria-label="GitHub"
+              >
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com/in/gabrielfranh" target="_blank" rel="noopener noreferrer" className="text-white" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com/in/gabrielfranh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+                aria-label="LinkedIn"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>
 
             <h5 className="mt-4">{t("contact.downloadCv")}</h5>
             <div className="d-flex gap-2 mt-2">
-              <a href="/documents/EN_Gabriel_Habermann.pdf" download className="btn btn-outline-light btn-sm">
+              <a
+                href="/documents/EN_Gabriel_Habermann.pdf"
+                download
+                className="btn btn-outline-light btn-sm"
+              >
                 <i className="fas fa-file-download me-2"></i>English
               </a>
-              <a href="/documents/PT_Gabriel_Habermann.pdf" download className="btn btn-outline-light btn-sm">
+              <a
+                href="/documents/PT_Gabriel_Habermann.pdf"
+                download
+                className="btn btn-outline-light btn-sm"
+              >
                 <i className="fas fa-file-download me-2"></i>Português
               </a>
             </div>
@@ -118,18 +141,29 @@ const Contact = () => {
 
               <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
-                  <i className="fas fa-paper-plane me-2"></i>{t("contact.submit")}
+                  <i className="fas fa-paper-plane me-2"></i>
+                  {t("contact.submit")}
                 </button>
               </div>
             </form>
           </div>
         </div>
 
-        <ToastContainer position="top-end" className="p-3 submitToast" style={{ zIndex: 9999 }} containerPosition='fixed'>
-        <Toast show={showToast} delay={4000} onClose={() => setShowToast(false)} autohide>
-          <Toast.Body>Mensagem enviada com sucesso!</Toast.Body>
-        </Toast>
-      </ToastContainer>
+        <ToastContainer
+          position="top-end"
+          className="p-3 submitToast"
+          style={{ zIndex: 9999 }}
+          containerPosition="fixed"
+        >
+          <Toast
+            show={showToast}
+            delay={4000}
+            onClose={() => setShowToast(false)}
+            autohide
+          >
+            <Toast.Body>Mensagem enviada com sucesso!</Toast.Body>
+          </Toast>
+        </ToastContainer>
       </div>
     </section>
   );

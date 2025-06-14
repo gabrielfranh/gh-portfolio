@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useTranslation } from 'react-i18next';
-import 'swiper/swiper-bundle.css';
-import '../../styles/components/projects/Projects.css'
+import { useTranslation } from "react-i18next";
+import "swiper/swiper-bundle.css";
+import "../../styles/components/projects/Projects.css";
 
 type Repo = {
   id: number;
@@ -31,8 +31,8 @@ const Projects = () => {
         setLoading(false);
 
         const uniqueLanguages = Array.from(
-            new Set(data.map((repo: Repo) => repo.language).filter(Boolean))
-          ) as string[];
+          new Set(data.map((repo: Repo) => repo.language).filter(Boolean))
+        ) as string[];
         setLanguages(uniqueLanguages);
       })
       .catch(() => {
@@ -43,7 +43,11 @@ const Projects = () => {
 
   const filterProjects = (language: string) => {
     setSelectedLanguage(language);
-    setFilteredRepos(language === "All" ? repos : repos.filter((repo) => repo.language === language));
+    setFilteredRepos(
+      language === "All"
+        ? repos
+        : repos.filter((repo) => repo.language === language)
+    );
   };
 
   if (loading) return <p className="loading">{t("projects.loading")}</p>;
@@ -55,7 +59,10 @@ const Projects = () => {
 
       <div className="filter-container">
         <label>{t("projects.filter")}</label>
-        <select value={selectedLanguage} onChange={(e) => filterProjects(e.target.value)}>
+        <select
+          value={selectedLanguage}
+          onChange={(e) => filterProjects(e.target.value)}
+        >
           <option value="All">{t("projects.all")}</option>
           {languages.map((lang) => (
             <option key={lang} value={lang}>
@@ -65,7 +72,13 @@ const Projects = () => {
         </select>
       </div>
 
-      <Swiper modules={[Navigation]} navigation spaceBetween={20} slidesPerView={1} breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}>
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
+      >
         {filteredRepos.map((repo) => (
           <SwiperSlide key={repo.id}>
             <div className="project-card">
