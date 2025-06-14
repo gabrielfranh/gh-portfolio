@@ -95,11 +95,6 @@ const Certifications = () => {
     };
   }, []);
 
-  const handleCertificationClick = (cert: Certification) => {
-    // Add click analytics or tracking here if needed
-    console.log(`Certification clicked: ${cert.name}`);
-  };
-
   return (
     <section 
       id="certifications" 
@@ -168,7 +163,6 @@ const Certifications = () => {
                   href={cert.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  onClick={(e) => handleCertificationClick(cert, e)}
                   className="certification-link"
                   aria-label={`View ${t(cert.name)} certification`}
                 >
