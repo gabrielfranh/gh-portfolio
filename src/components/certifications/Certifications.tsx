@@ -206,26 +206,6 @@ const Certifications = () => {
           <i className="fas fa-chevron-right"></i>
         </div>
       </div>
-
-      {/* Certification Stats */}
-      <div className="certification-stats">
-        <div className="stat-item">
-          <span className="stat-number">{certifications.length}</span>
-          <span className="stat-label">{t("certifications.totalCertifications")}</span>
-        </div>
-        <div className="stat-item">
-          <span className="stat-number">
-            {certifications.filter(cert => cert.issuer === "Amazon Web Services").length}
-          </span>
-          <span className="stat-label">AWS</span>
-        </div>
-        <div className="stat-item">
-          <span className="stat-number">
-            {certifications.filter(cert => cert.issuer === "Udemy").length}
-          </span>
-          <span className="stat-label">Udemy</span>
-        </div>
-      </div>
     </section>
   );
 };
