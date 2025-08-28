@@ -9,7 +9,7 @@ const About = () => {
     <div id="about" className="about-section">
       <div className="about-content">
         <div className="about-left">
-          <img src={me} alt="Gabriel Habermann" className="about-photo" />
+          <img src={me} alt="Gabriel Habermann" className="about-photo" loading="lazy" />
           <div className="about-icons">
             <a
               href="https://www.linkedin.com/in/gabrielfranh/?locale=en_US"
