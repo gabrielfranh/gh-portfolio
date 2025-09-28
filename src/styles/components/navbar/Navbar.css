@@ -123,7 +123,7 @@
 .navbar-toggler {
   border: none;
   padding: 0.25rem 0.5rem;
-  background: #DFD0B8;
+  background: #222831;
   border-radius: 4px;
 }
 
@@ -138,7 +138,7 @@
 /* Responsive */
 @media (max-width: 991px) {
   .navbar-collapse {
-    background: rgba(0, 0, 0, 0.95);
+    background: #222831;
     backdrop-filter: blur(15px);
     border-radius: 8px;
     margin-top: 1rem;
@@ -157,7 +157,7 @@
   
   .dropdown-menu {
     position: static;
-    background: #DFD0B8;
+    background: #222831;
     border: none;
     box-shadow: none;
     margin-left: 1rem;
