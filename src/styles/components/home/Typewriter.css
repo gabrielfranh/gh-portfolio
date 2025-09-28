@@ -2,7 +2,7 @@
   display: inline-block;
   width: 8px;
   height: 16px;
-  background-color: white;
+  background-color: #DFD0B8;
   margin-left: 2px;
   animation: blink 1s step-end infinite;
 }
