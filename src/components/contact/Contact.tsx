@@ -42,20 +42,13 @@ const Contact = () => {
 
             <div className="d-flex gap-4 fs-4 my-3 social-icons">
               <a
-                href="mailto:gabrielfranh@gmail.com"
-                className="text-white"
-                aria-label="Email"
-              >
-                <i className="fas fa-envelope"></i>
-              </a>
-              <a
                 href="https://github.com/gabrielfranh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
                 aria-label="GitHub"
               >
-                <i className="fab fa-github"></i>
+                <i className="fa-brands fa-github"></i>
               </a>
               <a
                 href="https://linkedin.com/in/gabrielfranh"
@@ -64,11 +57,11 @@ const Contact = () => {
                 className="text-white"
                 aria-label="LinkedIn"
               >
-                <i className="fab fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin"></i>
               </a>
             </div>
 
-            <h5 className="mt-4">{t("contact.downloadCv")}</h5>
+            <h5 className="mt-4 downloadCv">{t("contact.downloadCv")}</h5>
             <div className="d-flex gap-2 mt-2">
               <a
                 href="/documents/EN_Gabriel_Habermann.pdf"
@@ -161,7 +154,7 @@ const Contact = () => {
             onClose={() => setShowToast(false)}
             autohide
           >
-            <Toast.Body>Mensagem enviada com sucesso!</Toast.Body>
+            <Toast.Body>{t("contact.messageSent")}</Toast.Body>
           </Toast>
         </ToastContainer>
       </div>

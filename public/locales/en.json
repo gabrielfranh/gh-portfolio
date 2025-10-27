@@ -38,7 +38,8 @@
     "certifications": {
         "title": "Certifications",
         "kubernetes": "Kubernetes Complete",
-        "dotnetMicroservices": ".NET Core Microservices"
+        "dotnetMicroservices": ".NET Core Microservices",
+        "viewCertificate": "View certification"
     },
     "projects": {
         "title": "Personal/Study Projects",
@@ -58,6 +59,7 @@
         "message": "Message",
         "messagePlaceholder": "Type your message here",
         "submit": "Send Message",
+        "messageSent": "Message sent!",
         "downloadCv": "You can also download my CV in your preferred language"
     }
 }

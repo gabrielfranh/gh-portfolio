@@ -1,5 +1,4 @@
   .projects-section { 
-    color: #ffffff;
     padding: 40px 20px;
     text-align: center;
   }
@@ -7,7 +6,12 @@
   h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: #DFD0B8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .filter-label {
+    color: #948979;
   }
 
   .filter-container {
@@ -20,8 +24,8 @@
 
   .filter-container select {
     padding: 8px;
-    color: #000;
-    border: 1px solid #bb86fc;
+    color: #222831;
+    border: 1px solid #DFD0B8;
     border-radius: 5px;
   }
 
@@ -30,12 +34,12 @@
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: left;
-    border: 2px solid #bb86fc;
+    border: 2px solid #DFD0B8;
   }
 
   .project-card h3 {
     font-size: 1.5rem;
-    color: #bb86fc;
+    color: #DFD0B8;
   }
 
   .project-card p {
@@ -45,18 +49,22 @@
 
   .project-card .language {
     font-weight: bold;
-    color: #03dac6;
+    color: #DFD0B8;
   }
 
   .project-card a {
     display: inline-block;
     margin-top: 10px;
-    color: #bb86fc;
+    color: #DFD0B8;
     text-decoration: none;
   }
 
   .project-card a:hover {
     text-decoration: underline;
+  }
+
+  .swiper {
+    --swiper-navigation-color: #DFD0B8;
   }
 
   .loading,

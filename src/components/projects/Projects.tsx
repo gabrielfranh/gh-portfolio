@@ -58,7 +58,7 @@ const Projects = () => {
       <h2>{t("projects.title")}</h2>
 
       <div className="filter-container">
-        <label>{t("projects.filter")}</label>
+        <label className="filter-label">{t("projects.filter")}</label>
         <select
           value={selectedLanguage}
           onChange={(e) => filterProjects(e.target.value)}
@@ -73,11 +73,17 @@ const Projects = () => {
       </div>
 
       <Swiper
+        className="swiper"
         modules={[Navigation]}
         navigation
         spaceBetween={20}
         slidesPerView={1}
-        breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
+        breakpoints={{
+          640: { slidesPerView: 2, spaceBetween: 15 },
+          768: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 20 },
+          1280: { slidesPerView: 4, spaceBetween: 20 }
+        }}
       >
         {filteredRepos.map((repo) => (
           <SwiperSlide key={repo.id}>
