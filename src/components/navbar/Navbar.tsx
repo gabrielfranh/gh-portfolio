@@ -7,7 +7,7 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [navbarTransparent, setNavbarTransparent] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // novo estado para menu mobile
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container-fluid">
-        {/* Botão toggle para mobile */}
+        {/* Mobile button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -52,6 +52,7 @@ const Navbar = () => {
             >
               {t("navbar.home")}
             </Link>
+
             <Link
               className="nav-item nav-link"
               activeClass="active"
@@ -63,6 +64,7 @@ const Navbar = () => {
             >
               {t("navbar.about")}
             </Link>
+
             <Link
               className="nav-item nav-link"
               activeClass="active"
@@ -74,6 +76,7 @@ const Navbar = () => {
             >
               {t("navbar.skills")}
             </Link>
+
             <Link
               className="nav-item nav-link"
               activeClass="active"
@@ -85,6 +88,7 @@ const Navbar = () => {
             >
               {t("navbar.certifications")}
             </Link>
+
             <Link
               className="nav-item nav-link"
               activeClass="active"
@@ -96,15 +100,7 @@ const Navbar = () => {
             >
               {t("navbar.projects")}
             </Link>
-            <Link
-              className="nav-item nav-link disabled"
-              to="blog"
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Blog
-            </Link>
+
             <Link
               className="nav-item nav-link"
               activeClass="active"
@@ -116,6 +112,7 @@ const Navbar = () => {
             >
               {t("navbar.contact")}
             </Link>
+
             <div className="nav-item dropdown">
               <button
                 className="nav-link dropdown-toggle"

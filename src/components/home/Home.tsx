@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Navbar from "../navbar/Navbar";
 import Typewriter from "./Typewriter";
+import me from "../../assets/images/me.jpg";
 
 import "../../styles/components/home/Home.css";
 
@@ -20,32 +21,46 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div id="home" className="section">
-        <h1 className="title">
-          <Typewriter
-            text={t("home.title")}
-            delay={50}
-            repeat={false}
-            onComplete={handleTypewriterComplete}
-          />
-        </h1>
-        <div>
-          {showSubtitle && <h2 className="subTitle">{t("home.subTitle")}</h2>}
-        </div>
-        <div>
-          {showSubtitle && (
-            <>
-              <a
-                href="https://www.linkedin.com/in/gabrielfranh/?locale=en_US"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin fa-2xl homeIcons"></i>
-              </a>
-              <a href="https://github.com/gabrielfranh" target="_blank">
-                <i className="fa-brands fa-github fa-2xl homeIcons"></i>
-              </a>
-            </>
-          )}
+      <div className="home-section">
+        <div id="home" className="home-content">
+          
+          <div className="home-left">
+            <h1 className="title">
+              <Typewriter
+                text={t("home.title")}
+                delay={50}
+                repeat={false}
+                onComplete={handleTypewriterComplete}
+              />
+            </h1>
+
+            <div>
+              {showSubtitle && <h2 className="subTitle">{t("home.subTitle")}</h2>}
+            </div>
+
+            <div>
+              {showSubtitle && (
+                <>
+                  <a
+                    href="https://www.linkedin.com/in/gabrielfranh/?locale=en_US"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-brands fa-linkedin fa-2xl homeIcons"></i>
+                  </a>
+                  <a href="https://github.com/gabrielfranh" target="_blank" >
+                    <i className="fa-brands fa-github fa-2xl homeIcons"></i>
+                  </a>
+                </>
+              )}
+            </div>
+          
+          </div>
+
+          <div className="home-right">
+            <img src={me} alt="Gabriel Habermann" className="home-photo" loading="lazy" />
+          </div>
+          
         </div>
       </div>
     </>
