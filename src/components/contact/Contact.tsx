@@ -38,7 +38,7 @@ const Contact = () => {
 
         <div className="row align-items-start">
           <div className="col-md-5 mb-4 d-flex flex-column justify-content-center align-items-start ps-md-5 text-start">
-            <h4>gabrielfranh@gmail.com</h4>
+            <h4>dev@gabrielhabermann.com</h4>
 
             <div className="d-flex gap-4 fs-4 my-3 social-icons">
               <a
