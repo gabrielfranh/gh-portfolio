@@ -7,17 +7,16 @@ const skillGroups = [
     icon: "fa-brands fa-microsoft",
     skills: [
       { name: ".NET / C#", years: 6 },
-      { name: "Node.js", years: 2 },
-      { name: "REST APIs", years: 6 },
+      { name: "REST APIs", years: 5 },
     ],
   },
   {
     category: "DevOps",
     icon: "fa-brands fa-docker",
     skills: [
-      { name: "Docker", years: 4 },
-      { name: "Kubernetes", years: 4 },
-      { name: "CI/CD", years: 3 },
+      { name: "Docker", years: 5 },
+      { name: "Kubernetes", years: 3 },
+      { name: "Azure DevOps", years: 3 },
     ],
   },
   {
@@ -25,8 +24,6 @@ const skillGroups = [
     icon: "fa-brands fa-aws",
     skills: [
       { name: "AWS", years: 2 },
-      { name: "Lambda", years: 2 },
-      { name: "S3 / SQS", years: 2 },
     ],
   },
   {
@@ -43,8 +40,8 @@ const skillGroups = [
     skills: [
       { name: "Microservices", years: 5 },
       { name: "SOLID", years: 6 },
-      { name: "Design Patterns", years: 6 },
-      { name: "Message Brokers", years: 4 },
+      { name: "Design Patterns", years: 5 },
+      { name: "RabbitMQ", years: 4 },
     ],
   },
   {
@@ -52,9 +49,12 @@ const skillGroups = [
     icon: "fa-solid fa-database",
     skills: [
       { name: "PostgreSQL", years: 6 },
-      { name: "SQL Server", years: 6 },
+      { name: "SQL Server", years: 3 },
       { name: "MySQL", years: 4 },
       { name: "Redis", years: 2 },
+      { name: "Entity Framework", years: 5 },
+      { name: "Dapper", years: 5 },
+      { name: "MongoDb", years: 1 },
     ],
   },
   {
