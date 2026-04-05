@@ -1,0 +1,128 @@
+.notes-section {
+  min-height: 100vh;
+}
+
+/* ===== GRID ===== */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ===== NOTE FILE CARD ===== */
+.note-file-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.note-file-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Card header — filename */
+.note-file-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.note-file-icon {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.note-file-slug {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== MINI FRONTMATTER ===== */
+.note-frontmatter {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--bg-panel);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+}
+
+.nfm-delimiter {
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.nfm-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.nfm-key {
+  color: var(--accent-light);
+  flex-shrink: 0;
+}
+
+.nfm-date {
+  color: var(--tag-yellow);
+}
+
+.nfm-tags-line {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.nfm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nfm-tag {
+  color: var(--tag-green);
+  font-size: 0.75rem;
+}
+
+/* ===== CONTENT ===== */
+.note-title {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.note-preview {
+  color: var(--text-secondary);
+  font-size: 0.825rem;
+  line-height: 1.65;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}

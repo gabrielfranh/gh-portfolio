@@ -1,65 +1,101 @@
 {
     "navbar": {
         "home": "Início",
-        "about": "Sobre mim",
+        "about": "Sobre",
         "skills": "Habilidades",
-        "certifications": "Certificações",
         "projects": "Projetos",
-        "blog": "Blog",
+        "notes": "Notas",
         "contact": "Contato",
         "language": "Language"
-      },
-      "home": {
-          "title": "Gabriel Habermann",
-          "subTitle": "Engenheiro de Software certificado AWS, com 6 anos de experiência em desenvolvimento e arquitetura de soluções em nuvem."
-          
-      },
-      "about": {
-          "description": "Graduado em Ciências da Computação pela UNESP e certificado como AWS Cloud Practitioner, iniciei minha carreira como desenvolvedor em 2017, ainda no ensino médio e técnico. Desde então, tenho atuado como engenheiro de software backend, desenvolvendo soluções no ecossistema .NET (Core e Framework) com C#. Trabalho com diversas tecnologias, incluindo Kubernetes, Docker e MySQL, aplicando boas práticas como SOLID e KISS para garantir um código limpo e eficiente. Embora meu foco principal seja o desenvolvimento backend, também tenho experiência em desenvolvimento full-stack, utilizando React no front-end para criar interfaces dinâmicas e responsivas. Além disso, possuo forte conhecimento em testes unitários com ferramentas como xUnit e NUnit, além de expertise na utilização do ambiente AWS para entrega de software."
-          
-      },
-      "skills": {
-          "title": "Sou bom em:",
-          "backendDev": "Desenvolvimento Backend",
-          "framework": "O framework por trás desse portfolio!",
-          "containerization": "Containerização",
-          "orchestration": "Orquestração",
-          "cloudProvider": "Provedor de nuvem",
-          "cleanCode": "Código Limpo",
-          "principles": "Princípios",
-          "unitTest": "Testes de unidade",
-          "messageBrokers": "Mensageria",
-          "microservice": "Arquitetura de Microsserviço",
-          "designPatterns": "Padrões de Projeto",
-          "puzzles": "Desafios?!",
-          "years": " anos de experiência",
-          "database": "Banco de dados"
-      },
-      "certifications": {
-          "title": "Certificações",
-          "kubernetes": "Kubernetes Completo",
-          "dotnetMicroservices": "Microsserviços em .NET Core",
-          "viewCertificate": "Verificar certificado"
-      },
-      "projects": {
-          "title": "Projetos Pessoais/Estudos",
-          "filter" : "Filtrar por tecnologia:",
-          "all": "Todas",
-          "github": "Veja no GitHub",
-          "loading": "Carregando...",
-          "error": "Erro ao carregar os repositórios."
-      },
-      "contact": {
-          "title": "Vamos nos conectar?",
-          "subTitle": "Sinta-se à vontade para entrar em contato comigo através do formulário abaixo ou pelas redes sociais.",
-          "name": "Nome",
-          "namePlaceholder": "Digite seu nome",
-          "email": "Email",
-          "emailPlaceholder": "Digite seu email",
-          "message": "Mensagem",
-          "messagePlaceholder": "Digite sua mensagem aqui",
-          "submit": "Enviar Mensagem",
-          "messageSent": "Mensagem enviada com sucesso!",
-          "downloadCv": "Você também pode baixar meu currículo no seu idioma preferido."
-      }
-  }
+    },
+    "home": {
+        "title": "Gabriel Habermann",
+        "role": "Engenheiro de Software",
+        "years": "anos de experiência",
+        "subTitle": "Engenheiro de Software certificado AWS, com 6 anos de experiência em desenvolvimento e arquitetura de soluções em nuvem.",
+        "labels": {
+            "name": "nome",
+            "role": "cargo",
+            "stack": "stack",
+            "experience": "experiência"
+        }
+    },
+    "about": {
+        "subtext": "uma breve introdução",
+        "p1": "Graduado em Ciências da Computação pela UNESP e certificado como AWS Cloud Practitioner, iniciei minha carreira como desenvolvedor em 2017, ainda no ensino médio e técnico.",
+        "p2": "Desde então, atuo como engenheiro de software backend, desenvolvendo soluções no ecossistema .NET (Core e Framework) com C#. Trabalho com tecnologias como Kubernetes, Docker e MySQL, aplicando boas práticas como SOLID e KISS para garantir um código limpo e eficiente.",
+        "p3": "Embora meu foco principal seja o backend, também tenho experiência full-stack utilizando React no front-end. Possuo sólido conhecimento em testes unitários com xUnit e NUnit, além de expertise na entrega de software utilizando o ambiente AWS."
+    },
+    "skills": {
+        "title": "Habilidades",
+        "subtext": "ferramentas e tecnologias que utilizo",
+        "backendDev": "Desenvolvimento Backend",
+        "framework": "O framework por trás desse portfolio!",
+        "containerization": "Containerização",
+        "orchestration": "Orquestração",
+        "cloudProvider": "Provedor de nuvem",
+        "cleanCode": "Código Limpo",
+        "principles": "Princípios",
+        "unitTest": "Testes de unidade",
+        "messageBrokers": "Mensageria",
+        "microservice": "Arquitetura de Microsserviço",
+        "designPatterns": "Padrões de Projeto",
+        "puzzles": "Desafios?!",
+        "years": "anos de experiência",
+        "database": "Banco de dados"
+    },
+    "projects": {
+        "title": "Projetos",
+        "subtext": "repositórios pessoais e de estudo",
+        "filter": "Filtrar por tecnologia:",
+        "all": "todos",
+        "github": "Ver no GitHub",
+        "noDescription": "Sem descrição.",
+        "loading": "Carregando...",
+        "error": "Erro ao carregar os repositórios."
+    },
+    "notes": {
+        "title": "Notas",
+        "subtext": "reflexões sobre desenvolvimento de software",
+        "items": {
+            "0": {
+                "title": "Por que escolhi .NET para microsserviços",
+                "preview": "Depois de avaliar Go, Node.js e .NET para um sistema distribuído, o ecossistema rico, tipagem forte e desempenho do .NET fizeram a escolha óbvia para nossa equipe."
+            },
+            "1": {
+                "title": "Minha jornada aprendendo Kubernetes",
+                "preview": "Do zero ao ambiente de produção em 3 meses: deployments, services, ingress, Helm charts e tudo que eu gostaria de ter sabido desde o início."
+            },
+            "2": {
+                "title": "SOLID na prática — exemplos reais",
+                "preview": "Princípios abstratos só fazem sentido quando você os vê quebrando. Aqui estão os refactors concretos que fizeram o SOLID fazer sentido para mim depois de 3 anos escrevendo C#."
+            },
+            "3": {
+                "title": "Notas do exame AWS Cloud Practitioner",
+                "preview": "Conceitos-chave, os serviços que realmente importam e o modelo mental que construí para passar na certificação com confiança."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contato",
+        "subTitle": "entre em contato pelo formulário ou redes sociais",
+        "name": "Nome",
+        "namePlaceholder": "Seu nome",
+        "email": "Email",
+        "emailPlaceholder": "Seu email",
+        "message": "Mensagem",
+        "messagePlaceholder": "Digite sua mensagem...",
+        "submit": "enviar mensagem",
+        "sending": "enviando...",
+        "messageSent": "Mensagem enviada com sucesso!",
+        "downloadCv": "Baixar meu currículo",
+        "errors": {
+            "nameEmpty": "Sem nome? Até apelido de Discord serve.",
+            "nameShort": "Esse nome é mais curto que meu último commit.",
+            "emailEmpty": "Pensou que eu não ia validar o input, né?",
+            "emailInvalid": "Pensou que eu não ia validar o input, né? Isso não é um email válido.",
+            "messageEmpty": "O vazio não tem nada a dizer. E você?",
+            "messageShort": "Pode falar! Precisa de pelo menos 10 caracteres."
+        }
+    }
+}

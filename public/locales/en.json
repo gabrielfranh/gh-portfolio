@@ -1,25 +1,34 @@
 {
     "navbar": {
       "home": "Home",
-      "about": "About Me",
+      "about": "About",
       "skills": "Skills",
-      "certifications": "Certifications",
       "projects": "Projects",
-      "blog": "Blog",
+      "notes": "Notes",
       "contact": "Contact",
       "language": "Language"
     },
     "home": {
-        "title": "I'm Gabriel Habermann",
-        "subTitle": "AWS Certified Software Engineer with 6 years of experience in cloud solution development and architecture."
-        
+        "title": "Gabriel Habermann",
+        "role": "Software Engineer",
+        "years": "years of experience",
+        "subTitle": "AWS Certified Software Engineer with 6 years of experience in cloud solution development and architecture.",
+        "labels": {
+            "name": "name",
+            "role": "role",
+            "stack": "stack",
+            "experience": "experience"
+        }
     },
     "about": {
-        "description": "Graduated in Computer Science from UNESP and certified as an AWS Cloud Practitioner, I started my career as a developer in 2017 while still in high school and technical education. Since then, I have been working as a backend software engineer, developing solutions in the .NET ecosystem (Core and Framework) with C#. I work with various technologies, including Kubernetes, Docker, and MySQL, applying best practices such as SOLID and KISS to ensure clean and efficient code. Although my primary focus is on backend development, I also have experience in full-stack development, using React on the front end to build dynamic and responsive interfaces. Additionally, I have strong knowledge of unit testing with tools like xUnit and NUnit, as well as expertise in leveraging the AWS environment for software delivery."
-        
+        "subtext": "a brief intro",
+        "p1": "Graduated in Computer Science from UNESP and certified as an AWS Cloud Practitioner, I started my career as a developer in 2017 while still in high school and technical education.",
+        "p2": "Since then, I have been working as a backend software engineer, developing solutions in the .NET ecosystem (Core and Framework) with C#. I work with technologies such as Kubernetes, Docker, and MySQL, applying best practices like SOLID and KISS to ensure clean and maintainable code.",
+        "p3": "Although my primary focus is backend development, I also have full-stack experience using React on the front end. I hold strong knowledge in unit testing with xUnit and NUnit, and hands-on expertise delivering software through the AWS environment."
     },
     "skills": {
-        "title": "I'm good at:",
+        "title": "Skills",
+        "subtext": "tools and technologies I work with",
         "backendDev": "Backend Development",
         "framework": "The framework behind this portfolio!",
         "containerization": "Containerization",
@@ -32,34 +41,61 @@
         "microservice": "Microservice Architecture",
         "designPatterns": "Design Patterns",
         "puzzles": "Puzzles?!",
-        "years": " years of experience",
+        "years": "years of experience",
         "database": "Databases"
     },
-    "certifications": {
-        "title": "Certifications",
-        "kubernetes": "Kubernetes Complete",
-        "dotnetMicroservices": ".NET Core Microservices",
-        "viewCertificate": "View certification"
-    },
     "projects": {
-        "title": "Personal/Study Projects",
-        "filter" : "Filter by tech:",
-        "all": "All",
-        "github": "See on GitHub",
+        "title": "Projects",
+        "subtext": "personal and study repositories",
+        "filter": "Filter by tech:",
+        "all": "all",
+        "github": "View on GitHub",
+        "noDescription": "No description provided.",
         "loading": "Loading...",
-        "error": "Error loading the repositories."
+        "error": "Error loading repositories."
+    },
+    "notes": {
+        "title": "Notes",
+        "subtext": "thoughts on software development",
+        "items": {
+            "0": {
+                "title": "Why I chose .NET for microservices",
+                "preview": "After evaluating Go, Node.js and .NET for a distributed system, the rich ecosystem, strong typing, and performance of .NET made it the obvious choice for our team."
+            },
+            "1": {
+                "title": "My Kubernetes learning journey",
+                "preview": "From zero to production-ready in 3 months: deployments, services, ingress controllers, Helm charts, and everything I wish I had known from the start."
+            },
+            "2": {
+                "title": "SOLID in practice — real examples",
+                "preview": "Abstract principles only make sense when you see them break. Here are the concrete refactors that made SOLID click for me after 3 years of writing C#."
+            },
+            "3": {
+                "title": "Notes from the AWS Cloud Practitioner exam",
+                "preview": "Key concepts, the services that actually matter, and the mental model I built to pass the certification with confidence."
+            }
+        }
     },
     "contact": {
-        "title": "Contact Me",
-        "subTitle": "Feel free to reach out to me using the form below or in social media.",
+        "title": "Contact",
+        "subTitle": "reach out via form or social media",
         "name": "Name",
-        "namePlaceholder": "Enter your name",
+        "namePlaceholder": "Your name",
         "email": "Email",
-        "emailPlaceholder": "Enter your email",
+        "emailPlaceholder": "Your email",
         "message": "Message",
-        "messagePlaceholder": "Type your message here",
-        "submit": "Send Message",
-        "messageSent": "Message sent!",
-        "downloadCv": "You can also download my CV in your preferred language"
+        "messagePlaceholder": "Type your message...",
+        "submit": "send message",
+        "sending": "sending...",
+        "messageSent": "Message sent successfully!",
+        "downloadCv": "Download my CV",
+        "errors": {
+            "nameEmpty": "No name? Even a username counts.",
+            "nameShort": "That name is shorter than my last commit message.",
+            "emailEmpty": "Thought I wouldn't validate the input, huh?",
+            "emailInvalid": "Thought I wouldn't validate the input, huh? That's not a valid email.",
+            "messageEmpty": "The void has nothing to say. Do you?",
+            "messageShort": "Come on, I won't bite. Write at least 10 characters."
+        }
     }
 }

@@ -1,163 +1,244 @@
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import "../../styles/components/contact/Contact.css";
 import emailjs from "@emailjs/browser";
-import Toast from "react-bootstrap/Toast";
-import ToastContainer from "react-bootstrap/ToastContainer";
+import "../../styles/components/contact/Contact.css";
+
+type FormErrors = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
 const Contact = () => {
   const { t } = useTranslation();
   const [showToast, setShowToast] = useState(false);
-
+  const [sending, setSending] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({ name: "", email: "", message: "" });
+  const [touched, setTouched] = useState({ name: false, email: false, message: false });
   const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: any) => {
-    e.preventDefault();
+  const validateName = (value: string): string => {
+    if (!value.trim()) return t("contact.errors.nameEmpty");
+    return "";
+  };
 
+  const validateEmail = (value: string): string => {
+    if (!value.trim()) return t("contact.errors.emailEmpty");
+    if (!EMAIL_REGEX.test(value.trim())) return t("contact.errors.emailInvalid");
+    return "";
+  };
+
+  const validateMessage = (value: string): string => {
+    if (!value.trim()) return t("contact.errors.messageEmpty");
+    if (value.trim().length < 10) return t("contact.errors.messageShort");
+    return "";
+  };
+
+  const handleBlur = (field: keyof FormErrors, value: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    const error =
+      field === "name" ? validateName(value) :
+      field === "email" ? validateEmail(value) :
+      validateMessage(value);
+    setErrors((prev) => ({ ...prev, [field]: error }));
+  };
+
+  const handleChange = (field: keyof FormErrors, value: string) => {
+    if (!touched[field]) return;
+    const error =
+      field === "name" ? validateName(value) :
+      field === "email" ? validateEmail(value) :
+      validateMessage(value);
+    setErrors((prev) => ({ ...prev, [field]: error }));
+  };
+
+  const validate = (data: { name: string; email: string; message: string }): FormErrors => ({
+    name: validateName(data.name),
+    email: validateEmail(data.email),
+    message: validateMessage(data.message),
+  });
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
     if (!form.current) return;
 
+    const formData = new FormData(form.current);
+    const data = {
+      name: formData.get("user_name") as string ?? "",
+      email: formData.get("user_email") as string ?? "",
+      message: formData.get("message") as string ?? "",
+    };
+
+    const newErrors = validate(data);
+    setErrors(newErrors);
+    setTouched({ name: true, email: true, message: true });
+
+    if (Object.values(newErrors).some(Boolean)) return;
+
+    setSending(true);
     emailjs
       .sendForm("service_g0tbslt", "template_l2e6cjg", form.current, {
         publicKey: "j22QuQ7tut3HcbBN9",
       })
-      .then(
-        () => {
-          setShowToast(true);
-        },
-        (error: any) => {
-          console.log(error.text);
-        }
-      );
+      .then(() => {
+        setShowToast(true);
+        form.current?.reset();
+        setTouched({ name: false, email: false, message: false });
+        setErrors({ name: "", email: "", message: "" });
+        setTimeout(() => setShowToast(false), 4000);
+      })
+      .catch((error: any) => {
+        console.log(error.text);
+      })
+      .finally(() => setSending(false));
   };
 
   return (
-    <section className="contact-section text-white py-5" id="contact">
-      <div className="container">
-        <h2 className="text-center mb-4">{t("contact.title")}</h2>
-        <p className="text-center mb-5">{t("contact.subTitle")}</p>
+    <section className="contact-section" id="contact">
+      <h2 className="section-heading">{t("contact.title")}</h2>
+      <p className="section-subtext">{t("contact.subTitle")}</p>
 
-        <div className="row align-items-start">
-          <div className="col-md-5 mb-4 d-flex flex-column justify-content-center align-items-start ps-md-5 text-start">
-            <h4>dev@gabrielhabermann.com</h4>
+      <div className="contact-layout">
+        {/* ── Info column ── */}
+        <div className="contact-info">
+          <div className="note-card contact-info-card">
+            <p className="contact-email">
+              <i className="fa-solid fa-envelope" />
+              dev@gabrielhabermann.com
+            </p>
 
-            <div className="d-flex gap-4 fs-4 my-3 social-icons">
+            <div className="contact-socials">
               <a
                 href="https://github.com/gabrielfranh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
+                className="contact-social-link"
                 aria-label="GitHub"
               >
-                <i className="fa-brands fa-github"></i>
+                <i className="fa-brands fa-github" />
+                <span>GitHub</span>
               </a>
               <a
                 href="https://linkedin.com/in/gabrielfranh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
+                className="contact-social-link"
                 aria-label="LinkedIn"
               >
-                <i className="fa-brands fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin" />
+                <span>LinkedIn</span>
               </a>
             </div>
 
-            <h5 className="mt-4 downloadCv">{t("contact.downloadCv")}</h5>
-            <div className="d-flex gap-2 mt-2">
-              <a
-                href="/documents/EN_Gabriel_Habermann.pdf"
-                download
-                className="btn btn-outline-light btn-sm"
-              >
-                <i className="fas fa-file-download me-2"></i>English
-              </a>
-              <a
-                href="/documents/PT_Gabriel_Habermann.pdf"
-                download
-                className="btn btn-outline-light btn-sm"
-              >
-                <i className="fas fa-file-download me-2"></i>Português
-              </a>
+            <div className="contact-cv">
+              <p className="contact-cv-label">{t("contact.downloadCv")}</p>
+              <div className="contact-cv-links">
+                <a href="/documents/EN_Gabriel_Habermann.pdf" download className="cv-btn">
+                  <i className="fa-solid fa-file-arrow-down" />
+                  English
+                </a>
+                <a href="/documents/PT_Gabriel_Habermann.pdf" download className="cv-btn">
+                  <i className="fa-solid fa-file-arrow-down" />
+                  Português
+                </a>
+              </div>
             </div>
-          </div>
-
-          <div className="col-md-7">
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              method="POST"
-              className="p-4 rounded shadow form-dark"
-            >
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="box" />
-
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label text-white">
-                  {t("contact.name")}
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  name="user_name"
-                  required
-                  placeholder={t("contact.namePlaceholder")}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label text-white">
-                  {t("contact.email")}
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="user_email"
-                  required
-                  placeholder={t("contact.emailPlaceholder")}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="message" className="form-label text-white">
-                  {t("contact.message")}
-                </label>
-                <textarea
-                  className="form-control"
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  placeholder={t("contact.messagePlaceholder")}
-                ></textarea>
-              </div>
-
-              <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
-                  <i className="fas fa-paper-plane me-2"></i>
-                  {t("contact.submit")}
-                </button>
-              </div>
-            </form>
           </div>
         </div>
 
-        <ToastContainer
-          position="top-end"
-          className="p-3 submitToast"
-          style={{ zIndex: 9999 }}
-          containerPosition="fixed"
-        >
-          <Toast
-            show={showToast}
-            delay={4000}
-            onClose={() => setShowToast(false)}
-            autohide
-          >
-            <Toast.Body>{t("contact.messageSent")}</Toast.Body>
-          </Toast>
-        </ToastContainer>
+        {/* ── Form column ── */}
+        <div className="contact-form-wrapper">
+          <div className="compose-header">
+            <i className="fa-solid fa-file-lines" />
+            <span>// new-message.md</span>
+          </div>
+
+          <form ref={form} onSubmit={sendEmail} className="compose-form" noValidate>
+            <input type="hidden" name="_captcha" value="false" />
+
+            {/* Name */}
+            <div className="form-group">
+              <label htmlFor="user_name" className="form-label">
+                <span className="form-label-key">from:</span>
+              </label>
+              <input
+                id="user_name"
+                type="text"
+                name="user_name"
+                className={`form-input ${errors.name ? "form-input--error" : ""}`}
+                placeholder={t("contact.namePlaceholder")}
+                onBlur={(e) => handleBlur("name", e.target.value)}
+                onChange={(e) => handleChange("name", e.target.value)}
+              />
+              {errors.name && (
+                <span className="form-error">
+                  <i className="fa-solid fa-triangle-exclamation" /> {errors.name}
+                </span>
+              )}
+            </div>
+
+            {/* Email */}
+            <div className="form-group">
+              <label htmlFor="user_email" className="form-label">
+                <span className="form-label-key">email:</span>
+              </label>
+              <input
+                id="user_email"
+                type="email"
+                name="user_email"
+                className={`form-input ${errors.email ? "form-input--error" : ""}`}
+                placeholder={t("contact.emailPlaceholder")}
+                onBlur={(e) => handleBlur("email", e.target.value)}
+                onChange={(e) => handleChange("email", e.target.value)}
+              />
+              {errors.email && (
+                <span className="form-error">
+                  <i className="fa-solid fa-triangle-exclamation" /> {errors.email}
+                </span>
+              )}
+            </div>
+
+            {/* Message */}
+            <div className="form-group">
+              <label htmlFor="message" className="form-label">
+                <span className="form-label-key">body:</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                className={`form-input form-textarea ${errors.message ? "form-input--error" : ""}`}
+                placeholder={t("contact.messagePlaceholder")}
+                rows={6}
+                onBlur={(e) => handleBlur("message", e.target.value)}
+                onChange={(e) => handleChange("message", e.target.value)}
+              />
+              {errors.message && (
+                <span className="form-error">
+                  <i className="fa-solid fa-triangle-exclamation" /> {errors.message}
+                </span>
+              )}
+            </div>
+
+            <button type="submit" className="btn-send" disabled={sending}>
+              {sending ? (
+                <><i className="fa-solid fa-spinner fa-spin" /> {t("contact.sending")}</>
+              ) : (
+                <><i className="fa-solid fa-paper-plane" /> {t("contact.submit")} →</>
+              )}
+            </button>
+          </form>
+        </div>
       </div>
+
+      {/* Toast */}
+      {showToast && (
+        <div className="toast-success">
+          <i className="fa-solid fa-circle-check" />
+          {t("contact.messageSent")}
+        </div>
+      )}
     </section>
   );
 };
