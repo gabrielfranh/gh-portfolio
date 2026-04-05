@@ -6,8 +6,21 @@ const skillGroups = [
     category: "Backend",
     icon: "fa-brands fa-microsoft",
     skills: [
-      { name: ".NET / C#", years: 6 },
+      { name: ".NET", years: 6 },
+      { name: "C#", years: 6 },
       { name: "REST APIs", years: 5 },
+    ],
+  },
+  {
+    category: "Frameworks & Libraries",
+    icon: "fa-solid fa-cubes",
+    skills: [
+      { name: "ASP.NET Core", years: 6 },
+      { name: "Entity Framework", years: 5 },
+      { name: "Dapper", years: 5 },
+      { name: "FluentValidation", years: 4 },
+      { name: "AutoMapper", years: 4 },
+      { name: "MediatR", years: 2 },
     ],
   },
   {
@@ -52,8 +65,6 @@ const skillGroups = [
       { name: "SQL Server", years: 3 },
       { name: "MySQL", years: 4 },
       { name: "Redis", years: 2 },
-      { name: "Entity Framework", years: 5 },
-      { name: "Dapper", years: 5 },
       { name: "MongoDb", years: 1 },
     ],
   },
@@ -61,8 +72,10 @@ const skillGroups = [
     category: "Testing",
     icon: "fa-solid fa-vial-circle-check",
     skills: [
-      { name: "xUnit / NUnit", years: 6 },
-      { name: "Unit Testing", years: 6 },
+      { name: "xUnit", years: 6 },
+      { name: "NUnit", years: 5 },
+      { name: "Moq", years: 5 },
+      { name: "FluentAssertions", years: 3 },
     ],
   },
 ];
