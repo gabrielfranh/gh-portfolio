@@ -9,6 +9,8 @@ const skillGroups = [
       { name: ".NET", years: 6 },
       { name: "C#", years: 6 },
       { name: "REST APIs", years: 5 },
+      { name: "GraphQL", years: 2 },
+      { name: "gRPC", years: 1 },
     ],
   },
   {
@@ -30,6 +32,7 @@ const skillGroups = [
       { name: "Docker", years: 5 },
       { name: "Kubernetes", years: 3 },
       { name: "Azure DevOps", years: 3 },
+      { name: "Jenkins", years: 1 },
     ],
   },
   {
