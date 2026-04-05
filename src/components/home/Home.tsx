@@ -41,7 +41,7 @@ const Home = () => {
                 </div>
                 <div className="fm-line fm-animate" style={{ animationDelay: "0.1s" }}>
                   <span className="fm-key">{t("home.labels.stack")}:</span>
-                  <span className="fm-value fm-stack">.NET · Docker · Kubernetes · AWS</span>
+                  <span className="fm-value fm-stack">.NET · React · Docker · Kubernetes · AWS</span>
                 </div>
                 <div className="fm-line fm-animate" style={{ animationDelay: "0.2s" }}>
                   <span className="fm-key">{t("home.labels.experience")}:</span>
