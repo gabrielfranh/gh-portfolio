@@ -1,69 +1,90 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Navbar from "../navbar/Navbar";
 import Typewriter from "./Typewriter";
 import me from "../../assets/images/me.jpg";
-
 import "../../styles/components/home/Home.css";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
-  const [showSubtitle, setShowSubtitle] = useState(false);
-
-  const handleTypewriterComplete = () => {
-    setShowSubtitle(true);
-  };
+  const [showRest, setShowRest] = useState(false);
 
   useEffect(() => {
-    setShowSubtitle(false);
+    setShowRest(false);
   }, [i18n.language]);
 
   return (
-    <>
-      <Navbar />
-      <div className="home-section">
-        <div id="home" className="home-content">
-          
-          <div className="home-left">
-            <h1 className="title">
-              <Typewriter
-                text={t("home.title")}
-                delay={50}
-                repeat={false}
-                onComplete={handleTypewriterComplete}
-              />
-            </h1>
+    <section className="home-section" id="home">
+      <div className="home-content">
 
-            <div>
-              {showSubtitle && <h2 className="subTitle">{t("home.subTitle")}</h2>}
+        <div className="home-left">
+          <div className="frontmatter">
+            <span className="fm-delimiter">---</span>
+
+            <div className="fm-line">
+              <span className="fm-key">{t("home.labels.name")}:</span>
+              <span className="fm-value">
+                <Typewriter
+                  key={i18n.language}
+                  text={t("home.title")}
+                  delay={50}
+                  repeat={false}
+                  onComplete={() => setShowRest(true)}
+                />
+              </span>
             </div>
 
-            <div>
-              {showSubtitle && (
-                <>
-                  <a
-                    href="https://www.linkedin.com/in/gabrielfranh/?locale=en_US"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="fa-brands fa-linkedin fa-2xl homeIcons"></i>
-                  </a>
-                  <a href="https://github.com/gabrielfranh" target="_blank" >
-                    <i className="fa-brands fa-github fa-2xl homeIcons"></i>
-                  </a>
-                </>
-              )}
-            </div>
-          
+            {showRest && (
+              <>
+                <div className="fm-line fm-animate">
+                  <span className="fm-key">{t("home.labels.role")}:</span>
+                  <span className="fm-value">{t("home.role")}</span>
+                </div>
+                <div className="fm-line fm-animate" style={{ animationDelay: "0.1s" }}>
+                  <span className="fm-key">{t("home.labels.stack")}:</span>
+                  <span className="fm-value fm-stack">.NET · Docker · Kubernetes · AWS</span>
+                </div>
+                <div className="fm-line fm-animate" style={{ animationDelay: "0.2s" }}>
+                  <span className="fm-key">{t("home.labels.experience")}:</span>
+                  <span className="fm-value fm-number">6 {t("home.years")}</span>
+                </div>
+              </>
+            )}
+
+            <span className="fm-delimiter">---</span>
           </div>
 
-          <div className="home-right">
-            <img src={me} alt="Gabriel Habermann" className="home-photo" loading="lazy" />
-          </div>
-          
+          {showRest && (
+            <div className="home-links fm-animate" style={{ animationDelay: "0.35s" }}>
+              <a
+                href="https://www.linkedin.com/in/gabrielfranh/?locale=en_US"
+                target="_blank"
+                rel="noreferrer"
+                className="home-link"
+                aria-label="LinkedIn"
+              >
+                <i className="fa-brands fa-linkedin" />
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/gabrielfranh"
+                target="_blank"
+                rel="noreferrer"
+                className="home-link"
+                aria-label="GitHub"
+              >
+                <i className="fa-brands fa-github" />
+                <span>GitHub</span>
+              </a>
+            </div>
+          )}
         </div>
+
+        <div className="home-right">
+          <img src={me} alt="Gabriel Habermann" className="home-photo" loading="lazy" />
+        </div>
+
       </div>
-    </>
+    </section>
   );
 };
 
